@@ -1,0 +1,11 @@
+ AFL need a target application to fuzz test.
+fuzz station creates https://github.com/fuzzstati0n/fuzzgoat a vulnerable C program for testing fuzzers. and i use it for trying how afl works
+the program has many vulnerabilities with several deliberate memory corruption bugs that are easily found by AFL. It makes a very easy to run fuzz testing target.
+then 
+1.Download AFL from : http://lcamtuf.coredump.cx/afl/releases/afl-latest.tgz. Build it with make install .
+Please see the AFL quick start guide and docs for more info.
+2.Clone the Fuzzgoat repo. Fuzzgoat builds with make. With afl-gcc in your PATH environment variable: make
+3.Start the fuzzer. With afl-fuzz in your PATH, run the following command from the fuzzgoat/ directory:
+afl-fuzz -i in -o out ./fuzzgoat @@
+If all goes well the fuzz run will start and you will see the AFL status screen. 
+
